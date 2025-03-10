@@ -1,0 +1,30 @@
+# Build directories
+Debug/
+Release/
+
+# Build artifacts
+*.obj
+*.tlog
+*.log
+*.idb
+*.pdb
+*.lastbuildstate
+*_manifest.rc
+
+# Visual Studio files
+*.vcxproj.user
+.vs/
+
+# JetBrains IDE files
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Vim temporary files
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+[._]s[a-rt-v][a-z]
+[._]ss[a-gi-z]
+[._]sw[a-p]
+*~
