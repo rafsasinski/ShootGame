@@ -1,6 +1,7 @@
 # Build directories
 Debug/
 Release/
+build/
 
 # Build artifacts
 *.obj
