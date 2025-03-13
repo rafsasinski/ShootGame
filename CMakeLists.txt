@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.31)
 project(ShootGame)
 
-set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD 11)
 
 # The COMPONENTS part checks that OGRE was built the way we need it
 # The CONFIG flag makes sure we get OGRE instead of OGRE-next
@@ -13,10 +13,10 @@ find_library(OIS_LIBRARY NAMES OIS PATHS /usr/local/lib)
 
 if (NOT OIS_INCLUDE_DIR OR NOT OIS_LIBRARY)
     message(FATAL_ERROR "OIS not found!")
-endif()
+endif ()
 
-message(STATUS "OIS include directory: ${OIS_INCLUDE_DIR})
-message(STATUS "OIS library: ${OIS_LIBRARY})
+message(STATUS "OIS include directory: ${OIS_INCLUDE_DIR}")
+message(STATUS "OIS library: ${OIS_LIBRARY}")
 
 include_directories(${OIS_INCLUDE_DIR})
 # add the source files as usual
