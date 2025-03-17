@@ -20,6 +20,7 @@ This source file is part of the
 #include "Ogre.h"
 #include "OgreApplicationContext.h"
 #include <OGRE/Bites/OgreTrays.h>
+#include "OgreWindowEventUtilities.h"
 
 #include <OgreCamera.h>
 #include <OgreEntity.h>
@@ -35,7 +36,7 @@ This source file is part of the
 #include <OISKeyboard.h>
 #include <OISMouse.h>
 
-class BaseApplication : public Ogre::FrameListener, public OgreBites::InputListener, public OIS::KeyListener, public OIS::MouseListener
+class BaseApplication : public OgreBites::WindowEventListener, public Ogre::FrameListener, public OgreBites::InputListener, public OIS::KeyListener, public OIS::MouseListener
 {
 public:
     BaseApplication(void);
