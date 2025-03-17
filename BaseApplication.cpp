@@ -20,6 +20,7 @@ This source file is part of the
 BaseApplication::BaseApplication(void)
     : mRoot(0),
     mCamera(0),
+    camNode(0),
     mSceneMgr(0),
     mWindow(0),
     mResourcesCfg(Ogre::BLANKSTRING),
@@ -75,16 +76,21 @@ void BaseApplication::chooseSceneManager(void)
 //-------------------------------------------------------------------------------------
 void BaseApplication::createCamera(void)
 {
-    // Create the camera
+    // Create the Camera
     mCamera = mSceneMgr->createCamera("PlayerCam");
 
+	// Create Camera Node
+    camNode = mSceneMgr->getRootSceneNode()->createChildSceneNode();
+
     // Position it at 500 in Z direction
-    mCamera->setPosition(Ogre::Vector3(0,0,80));
+    camNode->setPosition(Ogre::Vector3(0,0,80));
     // Look back along -Z
-    mCamera->lookAt(Ogre::Vector3(0,0,-300));
+    camNode->lookAt(Ogre::Vector3(0,0,-300), Ogre::Node::TS_PARENT);
     mCamera->setNearClipDistance(5);
 
-    mCameraMan = new Ogre::Camera(mCamera);   // create a default camera controller
+	camNode->attachObject(mCamera);
+
+    mCameraMan = new OgreBites::CameraMan(camNode);   // create a default camera controller
 }
 //-------------------------------------------------------------------------------------
 void BaseApplication::createFrameListener(void)

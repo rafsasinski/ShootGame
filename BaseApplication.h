@@ -17,12 +17,12 @@ This source file is part of the
 #ifndef __BaseApplication_h_
 #define __BaseApplication_h_
 
-#include "Ogre.h"
+#include <Ogre.h>
 #include "OgreApplicationContext.h"
 #include <OGRE/Bites/OgreTrays.h>
 #include "OgreWindowEventUtilities.h"
+#include <OgreCameraMan.h>
 
-#include <OgreCamera.h>
 #include <OgreEntity.h>
 #include <OgreLogManager.h>
 #include <OgreRoot.h>
@@ -76,6 +76,7 @@ protected:
 
     Ogre::Root *mRoot;
     Ogre::Camera* mCamera;
+	Ogre::SceneNode *camNode;
     Ogre::SceneManager* mSceneMgr;
     Ogre::RenderWindow* mWindow;
     Ogre::String mResourcesCfg;
@@ -83,7 +84,7 @@ protected:
 
     // OgreBites
     OgreBites::TrayManager* mTrayMgr;
-    Ogre::Camera* mCameraMan;                    // basic camera controller
+    OgreBites::CameraMan* mCameraMan;                    // basic camera controller
     OgreBites::ParamsPanel* mDetailsPanel;     // sample details panel
     bool mCursorWasVisible;                    // was cursor visible before dialog appeared
     bool mShutDown;
