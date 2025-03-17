@@ -1,3 +1,6 @@
+# CMAKE
+cmake-build-debug/
+
 # Build directories
 Debug/
 Release/
